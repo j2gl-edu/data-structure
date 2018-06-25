@@ -3,21 +3,24 @@ package edu.advanced.linked;
 public class Nodo {
     int dato;
     Nodo link;
-  
+
     public Nodo() {
     }
+
     public void setDato(int valor) {
-      dato = valor;
+        dato = valor;
     }
+
     public void setLink(Nodo siguiente) {
-      link = siguiente;
+        link = siguiente;
     }
-  
+
     public int getDato() {
-      return dato;
+        return dato;
     }
+
     public Nodo getLink() {
-      return link;
+        return link;
     }
-  }
+}
   
