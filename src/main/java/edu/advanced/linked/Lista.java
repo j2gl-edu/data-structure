@@ -2,8 +2,8 @@ package edu.advanced.linked;
 
 public class Lista {
 
-    Nodo inicio;
-    int tamanio = 0;
+    private Nodo inicio;
+    private int tamanio = 0;
 
     /**
      * Crea una lista vacia
@@ -90,20 +90,27 @@ public class Lista {
         }
     }
 
-    public boolean buscar(int referencia) {
-        // Crea una copia de la lista.
+    /**
+     * Busca un elemento en la lista
+     * @param referencia el elemento a buscar
+     * @return true (verdadero) si el elemento existe.
+     */
+    public boolean existe(int referencia) {
+        // Crea una copia del puntero de la lista.
         Nodo aux = inicio;
+
         // Bandera para indicar si el valor existe.
         boolean encontrado = false;
+
         // Recorre la lista hasta encontrar el elemento o hasta
         // llegar al final de la lista.
-        while (aux != null && encontrado != true) {
+        while (aux != null && !encontrado) {
             // Consulta si el valor del nodo es igual al de referencia.
             if (referencia == aux.getDato()) {
                 // Canbia el valor de la bandera.
                 encontrado = true;
             } else {
-                // Avansa al siguiente. nodo.
+                // Avanza al siguiente. nodo.
                 aux = aux.getLink();
             }
         }
@@ -113,7 +120,7 @@ public class Lista {
 
     public void removerPorReferencia(int referencia) {
         // Consulta si el valor de referencia existe en la lista.
-        if (buscar(referencia)) {
+        if (existe(referencia)) {
             // Consulta si el nodo a eliminar es el pirmero
             if (inicio.getDato() == referencia) {
                 // El primer nodo apunta al siguiente.
@@ -135,6 +142,14 @@ public class Lista {
             // Disminuye el contador de tamaño de la lista.
             tamanio--;
         }
+    }
+
+    public Nodo getInicio() {
+        return inicio;
+    }
+
+    public int getTamanio() {
+        return tamanio;
     }
 
 }
