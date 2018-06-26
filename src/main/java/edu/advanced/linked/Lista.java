@@ -1,6 +1,7 @@
 package edu.advanced.linked;
 
 public class Lista {
+
     Nodo inicio;
     int tamanio = 0;
 
@@ -14,7 +15,6 @@ public class Lista {
     public boolean esVacia() {
         return (inicio == null);
     }
-
 
     public void agregarAlFinal(int valor) {
         // Define un nuevo nodo.
